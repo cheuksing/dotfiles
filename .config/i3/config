@@ -1,0 +1,90 @@
+# set modifier
+set $super Mod4
+set $alt Mod1
+
+set $font DejaVu Sans
+set $fontsize 8
+set $rofisize '$font 24'
+
+# set font
+font pango: $font $fontsize
+
+# autostart
+exec "gsettings set org.gnome.Terminal.Legacy.Settings headerbar false"
+exec_always --no-startup-id exec "pkill -HUP xsettingsd || xsettingsd &"
+
+# Use Mouse+$super to drag floating windows to their wanted position
+floating_modifier $super
+
+# start a terminal
+bindsym $super+t exec x-terminal-emulator
+bindsym $super+Return exec x-terminal-emulator
+
+# start program launcher
+bindsym $super+space exec rofi -show drun -font $rofisize
+
+# common apps keybinds
+bindsym Print exec exec flameshot gui
+bindsym $super+e exec nautilus --no-desktop
+bindsym $super+i exec gnome-control-center
+# bindsym $super+i exec env XDG_CURRENT_DESKTOP=GNOME gnome-control-center
+
+# kill focused window
+bindsym $super+w kill
+bindsym $alt+F4 kill
+
+# change focus
+bindsym $super+h focus left
+bindsym $super+j focus down
+bindsym $super+k focus up
+bindsym $super+l focus right
+
+# move focused window
+bindsym $super+Shift+h move left
+bindsym $super+Shift+j move down
+bindsym $super+Shift+k move up
+bindsym $super+Shift+l move right
+
+# enter fullscreen mode for the focused container
+bindsym F11 fullscreen toggle
+
+# change container layout split
+# bindsym $super+Tab layout toggle split
+
+# toggle tiling / floating
+# bindsym $alt+Tab floating toggle
+
+# change focus between tiling / floating windows
+bindsym $alt+Tab focus mode_toggle
+
+# switch to workspace
+bindsym $alt+Control+l workspace next
+bindsym $alt+Control+h workspace prev
+bindsym $super+a workspace a
+bindsym $super+s workspace s
+bindsym $super+d workspace d
+bindsym $super+f workspace f
+
+# move focused container to workspace
+bindsym $super+Shift+a move container to workspace a
+bindsym $super+Shift+s move container to workspace s
+bindsym $super+Shift+d move container to workspace d
+bindsym $super+Shift+f move container to workspace f
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $super+Shift+r restart
+
+# exit i3
+bindsym $super+q exec "i3-nagbar -t warning -m 'Really, exit?' -b 'Yes' 'i3-msg exit'"
+
+# panel
+bar {
+  tray_output none
+  status_command i3status
+}
+
+# window rules, you can find the window class using xprop
+for_window [class=".*"] border pixel 1
+
+# colour of border, background, text, indicator, and child_border
+client.focused              #000 #000 #000 #000 #d8dee8
