@@ -17,7 +17,7 @@ These files include changes:
   - ibus
 
 ### Previews
-  ![screenshot](https://github.com/cheuksing/dotfiles/blob/master/screenshot/img1.png)
+  ![screenshot](https://github.com/cheuksing/dotfiles/blob/master/screenshot/low-res.jpg)
 
 ### How to use
   - copy all files in this repo to $HOME
