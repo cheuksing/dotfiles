@@ -37,6 +37,7 @@ bindsym Control+space exec $HOME/.config/polybar/scripts/ibus.sh --toggle &
 
 # common apps keybinds
 bindsym Print exec flameshot gui
+bindsym Shift+Print exec flameshot full -p ~/Pictures
 bindsym $super+e exec nautilus --no-desktop
 
 # kill focused window
