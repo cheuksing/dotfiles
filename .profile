@@ -11,6 +11,12 @@
 # added by user
 PATH="$PATH:/snap/bin"
 
+# ibus
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+
+# hidpi
 export XDG_CONFIG_HOME="$HOME/.config"
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
 export QT_QPA_PLATFORMTHEME=gtk2

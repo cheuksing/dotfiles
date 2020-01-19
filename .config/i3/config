@@ -10,10 +10,6 @@ font pango: $font $fontsize
 
 # autostart
 exec --no-startup-id exec xsettingsd &
-exec --no-startup-id export GTK_IM_MODULE=ibus
-exec --no-startup-id export XMODIFIERS=@im=ibus
-exec --no-startup-id export QT_IM_MODULE=ibus
-
 # launcher
 exec_always --no-startup-id $HOME/.config/i3/ulauncher.sh
 
@@ -29,9 +25,6 @@ bindsym $super+Return exec x-terminal-emulator
 floating_modifier $super
 
 # ibus
-exec --no-startup-id export GTK\_IM\_MODULE=ibus
-exec --no-startup-id export XMODIFIERS=@im=ibus
-exec --no-startup-id export QT\_IM\_MODULE=ibus
 exec --no-startup-id ibus-daemon -drx
 bindsym Control+space exec $HOME/.config/polybar/scripts/ibus.sh --toggle &
 
