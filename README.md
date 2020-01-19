@@ -16,6 +16,9 @@ These files include changes:
   - yarn
   - ibus
 
+### Previews
+  ![screenshot](https://github.com/cheuksing/dotfiles/blob/master/screenshot/img1.png)
+
 ### How to use
   - copy all files in this repo to $HOME
 
