@@ -8,13 +8,13 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
-# custom vars
+# added by user
 PATH="$PATH:/snap/bin"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
 
-# pop-os defaults below
+# defaults below
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then

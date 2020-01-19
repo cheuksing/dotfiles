@@ -1,8 +1,8 @@
+Net/ThemeName "Pop-dark"
+Net/IconThemeName "Pop_Icons"
 Xft/DPI 196608
 Gdk/WindowScalingFactor 2
 Gdk/UnscaledDPI 98304
-Gdk/IconThemeName "Pop-dark"
-Gdk/ThemeName "Pop-dark"
 Xft/Hinting 1
 Xft/RGBA "rgb"
 Xft/HintStyle "hintslight"
