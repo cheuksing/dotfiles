@@ -9,7 +9,7 @@ set $fontsize 8
 font pango: $font $fontsize
 
 # autostart
-exec --no-startup-id exec xsettingsd &
+exec_always --no-startup-id exec xsettingsd &
 # launcher
 exec_always --no-startup-id $HOME/.config/i3/ulauncher.sh
 
@@ -32,6 +32,7 @@ bindsym Control+space exec $HOME/.config/polybar/scripts/ibus.sh --toggle &
 bindsym Print exec flameshot gui
 bindsym Shift+Print exec flameshot full -p ~/Pictures
 bindsym $super+e exec nautilus --no-desktop
+exec_always --no-startup-id setxkbmap -option caps:swapescape
 
 # kill focused window
 bindsym $super+w kill
@@ -69,16 +70,16 @@ bindsym F11 fullscreen toggle
 # switch to workspace
 bindsym $alt+Control+l workspace next
 bindsym $alt+Control+h workspace prev
-bindsym $super+a workspace a
-bindsym $super+s workspace s
-bindsym $super+d workspace d
-bindsym $super+f workspace f
+bindsym $super+a workspace 1:a
+bindsym $super+s workspace 2:s
+bindsym $super+d workspace 3:d
+bindsym $super+f workspace 4:f
 
 # move focused container to workspace
-bindsym $super+Shift+a move container to workspace a
-bindsym $super+Shift+s move container to workspace s
-bindsym $super+Shift+d move container to workspace d
-bindsym $super+Shift+f move container to workspace f
+bindsym $super+Shift+a move container to workspace 1:a
+bindsym $super+Shift+s move container to workspace 2:s
+bindsym $super+Shift+d move container to workspace 3:d
+bindsym $super+Shift+f move container to workspace 4:f
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $super+Shift+r restart
