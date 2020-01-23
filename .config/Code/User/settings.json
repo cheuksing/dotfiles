@@ -1,0 +1,35 @@
+{
+    "typescript.validate.enable": false,
+    "javascript.validate.enable": false,
+    "explorer.confirmDelete": false,
+    "files.exclude": {
+        "**/,DS_Store": true,
+        "**/.DS_Store": false
+    },
+    "search.exclude": {
+        "**/.next": true
+    },
+    "explorer.confirmDragAndDrop": false,
+    "javascript.updateImportsOnFileMove.enabled": "never",
+    "window.zoomLevel": 1,
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false,
+    "editor.fontWeight": "500",
+    "editor.fontSize": 13,
+    "editor.lineHeight": 22,
+    "editor.fontFamily": "'Source Code Pro'",
+    "terminal.integrated.fontSize": 12,
+    "terminal.integrated.lineHeight": 1.2,
+    "terminal.integrated.fontFamily": "'Source Code Pro'",
+    "terminal.integrated.shell.linux": "/usr/bin/zsh",
+    "window.menuBarVisibility": "toggle",
+    "workbench.statusBar.visible": true,
+    "workbench.activityBar.visible": false,
+    "debug.showInStatusBar": "never",
+    "workbench.colorCustomizations": {
+      "statusBar.background": "#1E1E1E",
+      "statusBar.foreground": "#9CDCFE",
+    },
+    "keyboard.dispatch": "keyCode",
+    "workbench.editor.focusRecentEditorAfterClose": false,
+}
