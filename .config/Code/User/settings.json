@@ -28,6 +28,7 @@
     "debug.showInStatusBar": "never",
     "workbench.colorCustomizations": {
       "statusBar.background": "#1E1E1E",
+      "statusBar.noFolderBackground" : "#1E1E1E",
       "statusBar.foreground": "#9CDCFE",
     },
     "keyboard.dispatch": "keyCode",
