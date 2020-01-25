@@ -1,8 +1,8 @@
-Net/ThemeName "Pop-dark"
-Net/IconThemeName "Pop_Icons"
+Net/ThemeName "Materia-dark-compact"
+Net/IconThemeName "default"
 Xft/DPI 196608
-Gdk/WindowScalingFactor 2
-Gdk/UnscaledDPI 98304
+Gdk/WindowScalingFactor 1
+Gdk/UnscaledDPI 196608
 Xft/Hinting 1
 Xft/RGBA "rgb"
 Xft/HintStyle "hintslight"
