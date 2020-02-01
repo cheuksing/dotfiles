@@ -11,15 +11,18 @@
 # added by user
 PATH="$PATH:/snap/bin"
 
+# tz
+TZ='Asia/Hong_Kong'; export TZ
+
 # ibus
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
+export GTK_IM_MODULE=fcitx
+export XMODIFIERS="@im=fcitx"
+export QT_IM_MODULE=fcitx
 
 # hidpi
 export XDG_CONFIG_HOME="$HOME/.config"
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
-export QT_QPA_PLATFORMTHEME=gtk2
+export QT_QPA_PLATFORMTHEME=qt5ct
 
 # defaults below
 
@@ -40,3 +43,4 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
+

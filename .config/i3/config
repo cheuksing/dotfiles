@@ -26,14 +26,13 @@ bindsym $super+Return exec x-terminal-emulator
 # Use Mouse+$super to drag floating windows to their wanted position
 floating_modifier $super
 
-# ibus
-exec --no-startup-id ibus-daemon -drx --panel /usr/lib/ibus/ibus-ui-gtk3
-bindsym Control+space exec $HOME/.config/polybar/scripts/ibus.sh --toggle &
+# fcitx
+exec --no-startup-id fcitx -r
 
 # common apps keybinds
 bindsym Print exec flameshot gui
 bindsym Shift+Print exec flameshot full -p ~/Pictures
-bindsym $super+e exec nautilus --no-desktop
+bindsym $super+e exec nemo
 
 # kill focused window
 bindsym $super+w kill
