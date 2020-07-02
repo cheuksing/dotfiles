@@ -1,4 +1,0 @@
-polybar|error: Disabling module "pulseaudio" (reason: Could not connect pulseaudio context.)
-polybar|warn:  module/i3: Attempting to reconnect socket (reason: Unexpected EOF while reading header)
-polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
-polybar|warn:  Termination signal received, shutting down...

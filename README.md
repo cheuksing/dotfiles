@@ -1,66 +1,78 @@
 ## dotfiles
 
 ### Intro
-This is my configured minimal i3 settings. You can take it if you want, but you may want to remove some env vars in .zshrc and .profile.
 
-These files include changes:
+This is mainly i3 settings, extends from Manjaro i3, as well as some web-dev config.
 
-- mostly for theming (mainly use gtk)
-  - gtk
-  - qt
-  - gitk
-  - polybar (status bar) and its modules
+GTK / Qt Themes are already using similar dark theme, by default in Manjaro i3.
+Colors remains unchanged.
 
-- also some env variables for
-  - nvm
-  - yarn
-  - ibus
+##### This includes
+
+  - HIDPI settings
+  - Picom / Compton
+  - Polybar
+    - minimal fcitx applet
+    - minimal bluetooth applet
+  - terminal
+    - zsh and Oh-my-zsh
+    - fonts (comfort coding, font-awesome)
+    - (color remains unchanged)
+  - Ulauncher
+  - Vs code styles
+  - Git
+      - lastpass as git password (lastpass-cli)
+      - gitk styles
+  - nodeJS
+      - nvm, node version manager
+      - added yarn global packages in $PATH
+  - removed beep sound
+
 
 ### Previews
-  ![screenshot](https://github.com/cheuksing/dotfiles/blob/master/screenshot/low-res.jpg)
+
+  ![screenshot](https://github.com/cheuksing/dotfiles/blob/master/screenshot/low-res.png)
+
+### Install selected applications
+
+- Oh-my-zsh, go to its github page and run its installation scripts
+- Ulauncher, run
+  - git clone https://aur.archlinux.org/ulauncher.git && cd ulauncher && makepkg -is
+- These are usefull apps can be installed from pacman, run
+  - pacman -S lastpass-cli polybar chromium code flameshot deluge deluge-gtk gitk tk
+- If you use fcitx, (this use fcitx-rime)
+  - pacman -S fcitx fcitx-configtool fcitx-rime
+- Some optional AUR packages
+  - Typora
 
 ### How to use
-  - copy all files in this repo to $HOME
 
-## Important Note
-  - This is a 4k display config
-  - Please set Xft.dpi based on your monitor
-  - If you use lightdm, you can use lightdm-gtk-greeter-settings to
-    - set Xft.dpi
-    - set background
-    - some other gtk fields
-  - You can also set it within .xsettingsd
+  - copy config files in this repo to relative directories, usually $HOME
+  - set lasspass-cli-git
+    - chmod 777 $HOME/.config/git/lpass.sh
+    - git config credential.helper "$HOME/.config/git/lpass.sh"
+  - Also
+    - Set yout wallpaper with nitrogen
+    - Change your GTK qt theme
+    - Change your colors in Xresources
+    - Change your oh-my-zsh theme
 
-### Requirements
-  - polybar
-  - ulauncher
-  - qt5-style-plugins (For qGtkStyle)
-  - xsettingsd (a lightweight x setting daemon)
+### Notes
 
-### Other recommended apps
-  - lightdm
-  - lightdm-gtk-greeter-settings
-  - flameshot
-  - zsh
-  - nvm (for web-dev)
-  - yarn (for web-dev)
+- Hidpi 
+  - See .profile and ./Xresources (dpi and xcursor)
+- Hidpi Pcmanfm
+  - See gtkrc-2.0 and ./.config/pcmanfm
+- VsCode config file
+  - was "Code/User" and now "Code - OSS/User"
+- Compton was renamed to Picom
+  - Manjaro i3 not yet handled
+  - remove compton.conf and use picom.conf
+- if systemd-analyze blame found random-seed slow
+  - add **random.trust_cpu=on** within grub command, if cpu support RDRAND
 
-### Polybar default modules
-  - i3
-  - date
-  - pulseaudio
+### Why Manjaro i3
 
-### Polybar custom modules
-  - ibus
-    - similar to xkeyboard
-    - detect Caps and ibus engine
-    - on click toggle
-    - PLEASE CHANGE TO YOUR INPUT METHOD IF NEEDED
-
-  - bluetooth
-    - based on polybar-scripts
-    - showing states
-      - service !== running
-      - on (none)
-      - on (list connected devices)
-      - off
+- It already setup compositor
+- It handles most gtk / qt related stuff and comes with an uniform look
+- No need to handle minor issue such as chrome-keyring, etc.

@@ -5,6 +5,8 @@ inactive_lang="en"
 
 kb_print() {
   while true; do
+    sleep 0.1
+
     if xset -q | grep -Eoq 'Caps Lock:[[:blank:]]+on'; then
       printf "Caps   %s"
     fi

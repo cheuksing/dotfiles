@@ -9,4 +9,5 @@ killall -q ulauncher
 while pgrep -u $UID -x ulauncher >/dev/null; do sleep 1; done
 
 # Launch bar1 and bar2
-env GDK_SCALE=2 GDK_DPI_SCALE=0.5 ulauncher --no-window-shadow &
+# env GDK_SCALE=2 GDK_DPI_SCALE=0.5 ulauncher &
+ulauncher &

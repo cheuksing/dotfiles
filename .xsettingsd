@@ -1,9 +1,0 @@
-Net/ThemeName "Materia-dark-compact"
-Net/IconThemeName "default"
-Xft/DPI 196608
-Gdk/WindowScalingFactor 1
-Gdk/UnscaledDPI 196608
-Xft/Hinting 1
-Xft/RGBA "rgb"
-Xft/HintStyle "hintslight"
-Xft/Antialias 1
