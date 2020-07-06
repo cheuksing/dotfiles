@@ -46,8 +46,10 @@ Colors remains unchanged.
   - Typora
 
 ### How to use
-
   - copy config files in this repo to relative directories, usually $HOME
+  - Fix pcmanfm
+    - echo "X11Forwarding yes" >> /etc/ssh/sshd_config
+    - ref: https://superuser.com/a/310201
   - set lasspass-cli-git
     - chmod 777 $HOME/.config/git/lpass.sh
     - git config credential.helper "$HOME/.config/git/lpass.sh"
