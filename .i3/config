@@ -181,22 +181,27 @@ bindsym $mod+9 exec --no-startup-id blurlock
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id clipit
 exec --no-startup-id xautolock -time 45 -locker blurlock
-exec_always --no-startup-id ff-theme-util
-exec_always --no-startup-id fix_xcursor
-exec --no-startup-id fcitx -r
+
+# no dpms (auto black screen)
+exec --no-startup-id sleep 1; xset s off -dpms
 
 # no beep
 exec --no-startup-id sleep 1; xset -b
 
 # background & compton
 exec --no-startup-id nitrogen --restore
-exec --no-startup-id compton -b
+exec_always --no-startup-id picom -b
 
 # launcher
 exec_always --no-startup-id $HOME/.i3/ulauncher.sh
 
 # Start polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# Run after compton
+exec_always --no-startup-id fcitx -r
+exec_always --no-startup-id ff-theme-util
+exec_always --no-startup-id fix_xcursor
 
 # exec --no-startup-id xfce4-power-manager
 # exec --no-startup-id start_conky_maia
