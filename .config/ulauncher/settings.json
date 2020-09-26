@@ -3,7 +3,8 @@
     "clear-previous-query": true,
     "hotkey-show-app": "<Super>space",
     "render-on-screen": "mouse-pointer-monitor",
-    "show-indicator-icon": true,
-    "show-recent-apps": false,
-    "theme-name": "dark"
+    "show-indicator-icon": false,
+    "show-recent-apps": "0",
+    "terminal-command": "",
+    "theme-name": "Sweet-Dark"
 }
