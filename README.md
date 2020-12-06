@@ -13,6 +13,7 @@ sudo add-apt-repository ppa:papirus/papirus
  - ulauncher
  - flameshot deluge deluge-gtk gitk tk
  - i3-gaps nitrogen lxappearance qt5ct qt5-style-kvantum qt5-style-kvantum-themes
+ - lpass-cli, see github page to build
 
 # Code Snipset
 
@@ -23,3 +24,8 @@ gsettings set org.freedesktop.ibus.panel xkb-icon-rgba "#FFFFFF"
 
 set tty font size
 https://askubuntu.com/a/1185941
+
+change tty layout
+```
+sudo dpkg-reconfigure keyboard-configuration
+```
