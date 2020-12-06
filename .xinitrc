@@ -39,6 +39,12 @@ if [ -f /usr/bin/ulauncher ]; then
    ulauncher --no-window-shadow --hide-window &
 fi
 
+if [ -f /usr/bin/thunar ]; then
+   thunar --daemon &
+fi
+
+# eval $(dbus-launch --sh-syntax)
+
 if [ -f /usr/bin/i3 ]; then
-    exec i3
+    exec dbus-launch --sh-syntax i3
 fi
