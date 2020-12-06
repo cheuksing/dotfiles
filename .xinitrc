@@ -26,6 +26,7 @@ fi
 # turn off the cpu default bell
 if [ -f /usr/bin/xset ]; then
     xset -b
+    xset s 1800 1800
 fi
 
 if [ -f /usr/bin/picom ]; then
