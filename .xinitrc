@@ -27,6 +27,7 @@ fi
 if [ -f /usr/bin/xset ]; then
     xset -b
     xset s 1800 1800
+    xset -dpms
 fi
 
 if [ -f /usr/bin/picom ]; then
@@ -46,5 +47,5 @@ fi
 # eval $(dbus-launch --sh-syntax)
 
 if [ -f /usr/bin/i3 ]; then
-    exec dbus-launch --sh-syntax i3
+    exec dbus-launch --exit-with-session --sh-syntax i3
 fi
