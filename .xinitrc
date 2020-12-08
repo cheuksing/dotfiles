@@ -2,6 +2,12 @@
 #
 # ~/.xinitrc
 
+# test for an existing bus daemon, just to be safe
+if test -z "$DBUS_SESSION_BUS_ADDRESS" ; then
+  # if not found, launch a new one
+  eval `dbus-launch --sh-syntax --exit-with-session`
+fi
+
 # Set up screens
 if [ `xrandr | grep -c ' connected '` -eq 2 ]; then # dual-monitor
     if [ `xrandr | grep HDMI-A-0 | grep -c ' connected '` -eq 1 ]; then
@@ -13,10 +19,6 @@ fi
 
 if [ -f ~/.Xresources ]; then
     xrdb -load ~/.Xresources
-fi
-
-if [ -f /usr/bin/ibus-daemon ]; then
-    env GDK_SCALE=1 GDK_DPI_SCALE=1 ibus-daemon -drx
 fi
 
 if [ -f /usr/bin/nitrogen ]; then
@@ -44,8 +46,19 @@ if [ -f /usr/bin/thunar ]; then
    thunar --daemon &
 fi
 
-# eval $(dbus-launch --sh-syntax)
+if [ -f /usr/bin/ibus-daemon ]; then
+    # same as xrandr 2 / 1.25 = 1
+    # these hidpi trick does not work on qt
+    env GDK_SCALE=1 GDK_DPI_SCALE=1.6 ibus-daemon -drx
+fi
+
+# start Gnome keyring
+if [ -f /usr/bin/gnome-keyring-daemon ]; then
+  # dbus-update-activation-environment --systemd DISPLAY
+  eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+  export SSH_AUTH_SOCK
+fi
 
 if [ -f /usr/bin/i3 ]; then
-    exec dbus-launch --exit-with-session --sh-syntax i3
+    exec dbus-launch i3
 fi
