@@ -10,11 +10,11 @@ fi
 
 # Set up screens
 if [ `xrandr | grep -c ' connected '` -eq 2 ]; then # dual-monitor
-    if [ `xrandr | grep HDMI-A-0 | grep -c ' connected '` -eq 1 ]; then
-        xrandr \
-          --output "DisplayPort-1" --primary --mode "2560x1440" --pos "0x1800" --scale "1.25x1.25"  \
-          --output "HDMI-A-0" --mode "2560x1440" --pos "0x0" --scale "1.25x1.25"
-    fi
+  if [ `xrandr | grep HDMI-A-0 | grep -c ' connected '` -eq 1 ]; then
+    xrandr \
+      --output "DisplayPort-1" --primary --mode "2560x1440" --pos "0x1800" --scale "1.25x1.25"  \
+      --output "HDMI-A-0" --mode "2560x1440" --pos "0x0" --scale "1.25x1.25"
+  fi
 fi
 
 if [ -f ~/.Xresources ]; then
@@ -39,24 +39,11 @@ fi
 
 # run in background
 if [ -f /usr/bin/ulauncher ]; then
-   ulauncher --no-window-shadow --hide-window &
+  ulauncher --no-window-shadow --hide-window &
 fi
 
 if [ -f /usr/bin/thunar ]; then
-   thunar --daemon &
-fi
-
-if [ -f /usr/bin/ibus-daemon ]; then
-    # same as xrandr 2 / 1.25 = 1
-    # these hidpi trick does not work on qt
-    env GDK_SCALE=1 GDK_DPI_SCALE=1.6 ibus-daemon -drx
-fi
-
-# start Gnome keyring
-if [ -f /usr/bin/gnome-keyring-daemon ]; then
-  # dbus-update-activation-environment --systemd DISPLAY
-  eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
-  export SSH_AUTH_SOCK
+  thunar --daemon &
 fi
 
 if [ -f /usr/bin/i3 ]; then

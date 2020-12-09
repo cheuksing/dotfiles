@@ -11,9 +11,15 @@ sudo add-apt-repository ppa:papirus/papirus
 
 ### Install selected applications
  - ulauncher
- - flameshot deluge deluge-gtk gitk tk
+ - flameshot 
+ - gitk tk
  - i3-gaps nitrogen lxappearance qt5ct qt5-style-kvantum qt5-style-kvantum-themes
- - lpass-cli, see github page to build
+ - lpass-cli
+   - see github page to build
+ - nimf
+   - libnimf1 nimf nimf-anthy nimf-dev nimf-libhangul nimf-m17n nimf-rime
+   - use nimf instead of ibus for better HIDPI support
+   - https://github.com/hamonikr/nimf
 
 # Code Snipset
 
