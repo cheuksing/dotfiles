@@ -20,6 +20,12 @@ sudo add-apt-repository ppa:papirus/papirus
    - libnimf1 nimf nimf-anthy nimf-dev nimf-libhangul nimf-m17n nimf-rime
    - use nimf instead of ibus for better HIDPI support
    - https://github.com/hamonikr/nimf
+ - xfce apps
+   - libexo-1-0
+   - thunar
+   - xfce4-notifyd (replace dunst)
+ - transmission
+   - bittorrent client
 
 # Code Snipset
 

@@ -36,6 +36,8 @@ if [ -d "$HOME/.cargo/bin" ]; then
     PATH="$HOME/.cargo/bin:$PATH"
 fi
 
+PATH="/usr/sbin:$PATH"
+
 # Auto startx
 if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
   startx

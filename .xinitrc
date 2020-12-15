@@ -35,6 +35,8 @@ fi
 if [ -f /usr/bin/picom ]; then
   # -b run as daemon
   picom -b
+elif [ -f /usr/bin/compton ]; then
+  compton &
 fi
 
 # run in background
@@ -44,6 +46,14 @@ fi
 
 if [ -f /usr/bin/thunar ]; then
   thunar --daemon &
+fi
+
+if [ -f /usr/lib/x86_64-linux-gnu/xfce4/notifyd/xfce4-notifyd ]; then
+  /usr/lib/x86_64-linux-gnu/xfce4/notifyd/xfce4-notifyd &
+fi
+
+if [ -f /usr/bin/ulauncher ]; then
+  ulauncher --no-window-shadow --hide-window &
 fi
 
 if [ -f /usr/bin/i3 ]; then
