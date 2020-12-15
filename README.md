@@ -16,6 +16,8 @@ sudo add-apt-repository ppa:papirus/papirus
  - i3-gaps nitrogen lxappearance qt5ct qt5-style-kvantum qt5-style-kvantum-themes
  - lpass-cli
    - see github page to build
+   - cp local-bin/git-credential-lasspass ~/.local/bin
+     - add it to PATH
  - nimf
    - libnimf1 nimf nimf-anthy nimf-dev nimf-libhangul nimf-m17n nimf-rime
    - use nimf instead of ibus for better HIDPI support
@@ -26,6 +28,7 @@ sudo add-apt-repository ppa:papirus/papirus
    - xfce4-notifyd (replace dunst)
  - transmission
    - bittorrent client
+ - gnome-keyring seahorse
 
 # Code Snipset
 
