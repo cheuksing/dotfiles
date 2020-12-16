@@ -29,6 +29,15 @@ sudo add-apt-repository ppa:papirus/papirus
  - transmission
    - bittorrent client
  - gnome-keyring seahorse
+ - audio bluetooth
+  - a2dp
+    - apt install pulseaudio pulseaudio-module-bluetooth pavucontrol bluez-firmware
+    - https://wiki.debian.org/BluetoothUser/a2dp
+  - apt install bluetooth blueman
+  - aptX (HD) and LDAC
+    - https://github.com/lagerimsi-ds/debian-buster_bluetooth_aptX-LDAC/
+  - fix bluetooth audio dbus error
+    - https://unix.stackexchange.com/a/373583/446667
 
 # Code Snipset
 
